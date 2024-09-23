@@ -1,10 +1,26 @@
+'''
+Copyright 2024 Techy-Wu
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+'''
+
 import requests
 from bs4 import BeautifulSoup 
 import re
 import json
 import argparse
 
-def request_jsessionid(user_name, password, inquery_url, plain_headers):
+def sso_pass(user_name, password, inquery_url, plain_headers):
     def get_value(data, name):
         soup = BeautifulSoup(data, 'html.parser')
         input = soup.find('input', {'name': name})
@@ -105,4 +121,4 @@ if __name__ == '__main__':
         if args.warn != 0:
             raise SyntaxWarning('Headers not specified')
     
-    print(request_jsessionid(name, password, url, headers))
+    print(sso_pass(name, password, url, headers))
