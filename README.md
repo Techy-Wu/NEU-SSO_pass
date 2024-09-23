@@ -1,2 +1,2 @@
 # NEU-SSO_pass
- A python lib for sso authentcation of NEU
+ A python lib programme for sso authentcation of NEU
